@@ -1,0 +1,5 @@
+<ul class="nav nav-pills" style="margin-bottom:30px">
+	<li{!! $sub_page == 'active_clients' ? ' class = "active"' : '' !!}><a href="{{ route('getAdminClients',['type'=>'active']) }}">Active <span class = "badge pull-right" style = "background-color:red;color:white">({{ number_format(count(App\User::where('user_type','CLIENT')->where('active',1)->get())) }})</span></a></li>
+	<li{!! $sub_page == 'inactive_clients' ? ' class = "active"' : '' !!}><a href="{{ route('getAdminClients',['type'=>'inactive']) }}">Inactive <span class = "badge pull-right" style = "background-color:red;color:white">({{ number_format(count(App\User::where('user_type','CLIENT')->where('active',0)->where('attempts_left','>','0')->get())) }})</span></a></li>
+	<li{!! $sub_page == 'blocked_clients' ? ' class = "active"' : '' !!}><a href="{{ route('getAdminClients',['type'=>'blocked']) }}">Blocked <span class = "badge pull-right" style = "background-color:red;color:white">({{ number_format(count(App\User::where('user_type','CLIENT')->where('attempts_left',0)->get())) }})</span></a></li>
+</ul>
