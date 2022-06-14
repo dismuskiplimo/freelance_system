@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "~7.1.*",
+        "php": "^7.1.2",
         "laravel/framework": "5.3.*",
         "mews/purifier": "^2.0",
         "intervention/image": "^2.3",
